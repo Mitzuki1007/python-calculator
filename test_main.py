@@ -1,15 +1,17 @@
 """Автоматические тесты калькулятора на unittest."""
 
 import unittest
+from io import StringIO
+from unittest.mock import patch
 
 from main import (
     addition,
     subtraction,
     multiplication,
     division,
-    arithmetic_mean
+    arithmetic_mean,
+    show_help
 )
-
 
 class CalculatorTests(unittest.TestCase):
 
@@ -38,6 +40,17 @@ class CalculatorTests(unittest.TestCase):
 
     def test_average_single_number(self):
         self.assertEqual(arithmetic_mean([7]), 7)
+
+    def test_show_help_displays_information(self):
+        with patch("sys.stdout", new_callable=StringIO) as output:
+            show_help()
+
+        help_text = output.getvalue()
+
+        self.assertIn("1. Сложение", help_text)
+        self.assertIn("5. Среднее арифметическое", help_text)
+        self.assertIn("6. Помощь", help_text)
+        self.assertIn("0. Выход", help_text)
 
 
 if __name__ == "__main__":
