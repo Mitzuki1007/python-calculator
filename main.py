@@ -147,7 +147,7 @@ def main():
                 result = arithmetic_mean(numbers)
 
             else:
-                print("Ошибка: неверный пункт меню.")
+                print("Ошибка: такого пункта меню нет. Выберите пункт от 0 до 6.")
                 continue
 
             result = validate_result(result)

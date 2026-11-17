@@ -10,7 +10,8 @@ from main import (
     multiplication,
     division,
     arithmetic_mean,
-    show_help
+    show_help,
+    main
 )
 
 class CalculatorTests(unittest.TestCase):
@@ -51,6 +52,18 @@ class CalculatorTests(unittest.TestCase):
         self.assertIn("5. Среднее арифметическое", help_text)
         self.assertIn("6. Помощь", help_text)
         self.assertIn("0. Выход", help_text)
+
+    def test_invalid_menu_choice_displays_error(self):
+        with patch("builtins.input", side_effect=["9", "0"]):
+            with patch("sys.stdout", new_callable=StringIO) as output:
+                main()
+
+        result = output.getvalue()
+
+        self.assertIn(
+            "Ошибка: такого пункта меню нет.",
+            result
+        )
 
 
 if __name__ == "__main__":
