@@ -149,4 +149,6 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        print("\nРабота калькулятора прервана пользователем.")
+if choice == 0
+    print(Спасибо за использование калькулятора! Би Би)
+    break
