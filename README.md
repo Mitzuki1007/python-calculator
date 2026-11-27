@@ -115,7 +115,7 @@ python -m unittest -v
 - [Примеры оформления Markdown](docs/MARKDOWN_EXAMPLES.md).
 - [История изменений проекта](CHANGELOG.md).
 - [Wiki проекта](https://github.com/Mitzuki1007/python-calculator/wiki).
-
+- [Сайт документации GitHub Pages](https://mitzuki1007.github.io/python-calculator/).
 ## 10. Автор и сведения о проекте
 
 **Автор:** [Mitzuki].
